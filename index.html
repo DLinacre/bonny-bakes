@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bonny Bakes — Simple bakes. Happy hearts.</title>
+
+<meta name="description" content="Bonny Bakes is a cosy corner of simple, reliable home baking recipes — flapjacks, fairy cakes, Victoria sponge and more, with a handy quantity calculator, shopping list and print-friendly recipe cards.">
+<meta name="theme-color" content="#fff8f1">
+<meta name="author" content="Bonny Bakes">
+
+<!-- ── Social sharing cards ─────────────────────────────────────────────── -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bonny Bakes">
+<meta property="og:title" content="Bonny Bakes — Simple bakes. Happy hearts.">
+<meta property="og:description" content="Lovely homemade recipes from Bonny's kitchen, with a quantity calculator for every recipe.">
+<meta property="og:image" content="images/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ── Favicon (inline, no extra file needed) ───────────────────────────── -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23fff3f6'/%3E%3Cpath d='M32 52s-16-9.4-16-21a9 9 0 0 1 16-5.7A9 9 0 0 1 48 31c0 11.6-16 21-16 21z' fill='%23c2185b'/%3E%3Cpath d='M32 20c0-6 3-9 7-10' stroke='%236f8f5f' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<!-- Crisp icon for phones that save the site to their home screen -->
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<!-- ── Fonts: Google Fonts when online, warm system fallbacks offline ─────
+     The site works perfectly with no internet at all; these are a bonus. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- If style.css is ever missing (e.g. files moved), the site still looks
+     tidy rather than broken. Remove this block if you like. -->
+<noscript><style>
+  body{font-family:Georgia,serif;background:#fff8f1;color:#4a3226;margin:0;line-height:1.6;padding:1rem}
+  h1,h2,h3{color:#a3164f}a{color:#c2185b}
+</style></noscript>
+
+<!-- Fallback in case style.css fails to load but scripts run.
+     script.js removes this class once the real stylesheet is confirmed. -->
+<style id="bb-fallback">
+  .bb-nocss body{font-family:Georgia,'Times New Roman',serif;background:#fff8f1;color:#4a3226;margin:0;line-height:1.65}
+  .bb-nocss .site-header,.bb-nocss .site-footer{background:#fff3f6;padding:14px 18px}
+  .bb-nocss h1,.bb-nocss h2,.bb-nocss h3{color:#a3164f;font-weight:700}
+  .bb-nocss a{color:#c2185b}
+  .bb-nocss main{padding:18px;max-width:960px;margin:0 auto}
+  .bb-nocss img{max-width:100%;height:auto;border-radius:10px}
+  .bb-nocss .btn,.bb-nocss button{font:inherit;padding:8px 14px;border-radius:999px;border:1px solid #e3b9c8;background:#fff;cursor:pointer}
+  .bb-nocss .card{background:#fff;border:1px solid #f0d9e0;border-radius:14px;padding:14px;margin-bottom:16px}
+</style>
+</head>
+
+<body>
+
+<!-- Screen-reader-only announcement of page changes -->
+<span class="sr-only" role="status" aria-live="polite" id="live-region"></span>
+
+<!-- Jump straight to the content, for keyboard users -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ── Hidden icon set. Every icon in the site is one of these. ──────────── -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
+  <symbol id="i-heart" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
+      d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1l8.8 8.8 8.8-8.8a5 5 0 0 0 0-7.1z"/>
+  </symbol>
+  <symbol id="i-heart-fill" viewBox="0 0 24 24">
+    <path fill="currentColor" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"
+      d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1l8.8 8.8 8.8-8.8a5 5 0 0 0 0-7.1z"/>
+  </symbol>
+  <symbol id="i-search" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="6.6" fill="none" stroke="currentColor" stroke-width="1.9"/>
+    <path d="m16.2 16.2 4.3 4.3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24">
+    <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M12 7.4V12l3 1.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-oven" viewBox="0 0 24 24">
+    <rect x="3.6" y="4.4" width="16.8" height="15.2" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M3.6 9.6h16.8" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="6.8" cy="7" r=".9" fill="currentColor"/>
+    <rect x="6.6" y="12.4" width="10.8" height="4.6" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="i-serves" viewBox="0 0 24 24">
+    <path d="M3.5 13.2h17a8.5 8.5 0 0 0-17 0z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M2.4 16.4h19.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M12 4.8v-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24">
+    <path d="M12 4.4v15.2M7 8.2h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M3.4 15.4a3.6 3.6 0 0 0 7.2 0L7 8.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M13.4 15.4a3.6 3.6 0 0 0 7.2 0L17 8.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-print" viewBox="0 0 24 24">
+    <path d="M7 9V4.6h10V9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    <rect x="3.8" y="9" width="16.4" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M7 14h10v5.4H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-share" viewBox="0 0 24 24">
+    <circle cx="18" cy="5.6" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="6" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="18" cy="18.4" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="m8.4 10.8 7.2-3.9M8.4 13.2l7.2 3.9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="i-list" viewBox="0 0 24 24">
+    <path d="M8.4 6.6h12M8.4 12h12M8.4 17.4h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+    <path d="m3.4 6.2 1.4 1.4 2.2-2.4M3.4 11.6l1.4 1.4 2.2-2.4M3.4 17l1.4 1.4 2.2-2.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24">
+    <path d="M4.6 10.2a7.6 7.6 0 1 1 .6 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M3.2 5.6v5h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24">
+    <path d="M4.6 6.6h14.8M9.4 6.6V4.4h5.2v2.2M6.6 6.6l1 12.8h8.8l1-12.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24">
+    <path d="M12 5.4v13.2M5.4 12h13.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24">
+    <path d="M5.4 12h13.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24">
+    <path d="m5 12.6 4.4 4.4L19 6.6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24">
+    <path d="M4.6 12h14M13 6.2l5.8 5.8-5.8 5.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-whisk" viewBox="0 0 24 24">
+    <path d="M12 3.2c3.6 2.2 5.2 5.2 5.2 8.4 0 2.4-1.4 4-5.2 4s-5.2-1.6-5.2-4c0-3.2 1.6-6.2 5.2-8.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M12 3.2v12.4M7.6 8.4c1.6.8 7.2.8 8.8 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M12 15.6v5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24">
+    <path d="M12 3.4l1.9 5.1 5.1 1.9-5.1 1.9-1.9 5.1-1.9-5.1-5.1-1.9 5.1-1.9z" fill="currentColor"/>
+    <path d="M18.6 15.4l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24">
+    <path d="M9.2 17.4a6.2 6.2 0 1 1 5.6 0v1.4a1.6 1.6 0 0 1-1.6 1.6h-2.4a1.6 1.6 0 0 1-1.6-1.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M9.6 20.4h4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24">
+    <path d="M9.6 2.8h4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="12" cy="13.6" r="7.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M12 9.8v3.8l2.6 1.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header class="site-header" id="site-header">
+  <div class="bar">
+    <a class="brand" href="#/" aria-label="Bonny Bakes — home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="42" height="42" focusable="false">
+          <circle cx="32" cy="32" r="30" fill="#ffe3ec"/>
+          <path d="M32 50s-14-8.4-14-18.6A8.2 8.2 0 0 1 32 26.2 8.2 8.2 0 0 1 46 31.4C46 41.6 32 50 32 50z" fill="#c2185b"/>
+          <path d="M32 25c0-5.6 2.8-8.6 6.6-9.6" stroke="#6f8f5f" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">Bonny Bakes</span>
+        <span class="brand__tag">from Bonny&rsquo;s kitchen</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <!-- Header search: expandable on desktop, opens the search overlay on mobile -->
+      <form class="header-search" id="header-search" role="search" autocomplete="off">
+        <label class="sr-only" for="header-search-input">Search recipes</label>
+        <svg class="icon header-search__icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="header-search-input" type="search" name="q" placeholder="Search recipes&hellip;"
+               aria-label="Search recipes" aria-describedby="header-search-hint"
+               role="combobox" aria-expanded="false" aria-controls="search-suggest" aria-autocomplete="list">
+        <span id="header-search-hint" class="sr-only">Start typing to search recipe names, ingredients and categories.</span>
+        <ul class="search-suggest" id="search-suggest" role="listbox" aria-label="Recipe suggestions"></ul>
+      </form>
+
+      <button class="icon-btn header-search__toggle" id="search-toggle" type="button"
+              aria-label="Search recipes" aria-expanded="false" aria-controls="header-search">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+      </button>
+
+      <a class="icon-btn" id="fav-button" href="#/favourites" aria-label="My favourites">
+        <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>
+        <span class="badge" id="fav-badge" hidden>0</span>
+      </a>
+
+      <button class="icon-btn" id="cart-button" type="button" aria-label="Open shopping list"
+              aria-haspopup="dialog" aria-expanded="false" aria-controls="shopping-panel">
+        <svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>
+        <span class="badge" id="cart-badge" hidden>0</span>
+      </button>
+
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button"
+              aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <svg class="icon icon--menu" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon--close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Lives outside the flex bar so it can drop down full width on phones
+       without disturbing the header layout. -->
+  <nav class="main-nav" id="main-nav" aria-label="Main">
+    <ul>
+      <li><a href="#/" data-nav="/">Home</a></li>
+      <li><a href="#/recipes" data-nav="/recipes">Recipes</a></li>
+      <li><a href="#/about" data-nav="/about">About Bonny</a></li>
+      <li>
+        <a href="#/favourites" data-nav="/favourites">Favourites
+          <span class="nav-count" id="nav-fav-count" hidden>0</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<main id="main" tabindex="-1">
+  <div id="app">
+    <!-- Everything you see is drawn from the recipe data in recipes.js -->
+    <noscript>
+      <div class="no-js">
+        <h1>Bonny Bakes</h1>
+        <p>This recipe book needs JavaScript switched on so it can work out quantities,
+           save your favourites and build your shopping list. Please enable JavaScript
+           in your browser and refresh the page &mdash; your recipes will appear straight away.</p>
+      </div>
+    </noscript>
+  </div>
+</main>
+
+<!-- ══════════════════ SHOPPING LIST DRAWER ══════════════════ -->
+<aside class="panel" id="shopping-panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>
+  <div class="panel__scrim" data-close-panel></div>
+  <div class="panel__box" role="document">
+    <header class="panel__head">
+      <h2 id="panel-title">My shopping list</h2>
+      <button class="icon-btn" type="button" data-close-panel aria-label="Close shopping list">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </header>
+    <div class="panel__body" id="panel-body"></div>
+    <footer class="panel__foot">
+      <button class="btn btn--ghost" type="button" id="panel-clear">Clear the lot</button>
+      <button class="btn btn--ghost" type="button" id="panel-print">Print list</button>
+    </footer>
+  </div>
+</aside>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="site-footer no-print">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p class="footer-logo">Bonny Bakes</p>
+      <p class="footer-note">Simple bakes. Happy hearts.<br>
+      Lovely homemade recipes from Bonny&rsquo;s kitchen &mdash; written for real kitchens,
+      real tins and real hungry families.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <h2 class="footer-heading">Wander about</h2>
+      <ul>
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/recipes">All recipes</a></li>
+        <li><a href="#/favourites">My favourites</a></li>
+        <li><a href="#/about">About Bonny</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-nav" aria-label="Popular categories">
+      <h2 class="footer-heading">Popular tins</h2>
+      <ul id="footer-categories"></ul>
+    </nav>
+    <div class="footer-nav">
+      <h2 class="footer-heading">Good to know</h2>
+      <ul class="footer-tips">
+        <li>Every recipe scales up or down &mdash; pick how many you need.</li>
+        <li>Tap the heart to keep a recipe in your favourites.</li>
+        <li>Print any recipe as a tidy kitchen card.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-base">&copy; <span id="year">2026</span> Bonny Bakes &middot; Made with butter, sugar and love.</p>
+</footer>
+
+<!-- ══════════════════ TOAST MESSAGES ══════════════════ -->
+<div class="toast-wrap" id="toast-wrap" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Recipe data first, then the app. Both are plain files you can edit. -->
+<script src="recipes.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

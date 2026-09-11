@@ -1,0 +1,8 @@
+# Test / render outputs — never part of the site
+_shot-*.png
+_test-print-*.pdf
+tools/_shot-*.png
+tools/_test-print-*.pdf
+__pycache__/
+.DS_Store
+Thumbs.db

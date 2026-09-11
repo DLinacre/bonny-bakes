@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+    background:
+      radial-gradient(circle at 8% 10%, rgba(255,227,236,.9), transparent 42%),
+      radial-gradient(circle at 92% 90%, rgba(255,233,168,.6), transparent 40%),
+      radial-gradient(circle at 70% 8%, rgba(234,241,227,.7), transparent 45%),
+      #fff8f1;
+    display: flex; align-items: center; position: relative;
+  }
+  .deco { position: absolute; border-radius: 50%; }
+  .deco--1 { width: 260px; height: 260px; right: -70px; top: -80px; background: rgba(242,120,159,.14); }
+  .deco--2 { width: 180px; height: 180px; left: 46%; bottom: -60px; background: rgba(246,209,115,.18); }
+  .left { padding-left: 84px; width: 620px; }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #fff; border: 1px solid #f0dfd2; border-radius: 999px;
+    padding: 8px 20px 8px 12px; font-weight: 800; font-size: 17px; color: #8c0d3d;
+    box-shadow: 0 6px 18px rgba(120,74,50,.10);
+  }
+  .kicker .dot { width: 10px; height: 10px; border-radius: 50%; background: #6f8f5f; box-shadow: 0 0 0 5px #eaf1e3; }
+  h1 {
+    font-family: 'Pacifico', 'Brush Script MT', cursive; font-weight: 400;
+    font-size: 108px; line-height: 1.12; color: #b3124f; margin: 26px 0 6px;
+  }
+  .tag { font-size: 30px; font-weight: 800; color: #4a3226; }
+  .tag em { font-family: 'Pacifico', cursive; font-style: normal; color: #b3124f; }
+  .chips { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
+  .chip {
+    background: #fff; border: 2px solid #ffe3ec; color: #7a5b4a; font-weight: 800;
+    font-size: 16.5px; padding: 9px 18px; border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(120,74,50,.08);
+  }
+  .right { position: absolute; right: 40px; top: 0; bottom: 0; width: 560px; }
+  .shot {
+    position: absolute; border: 10px solid #fff; border-radius: 22px;
+    box-shadow: 0 24px 60px rgba(120,74,50,.22);
+    background: #fff; overflow: hidden;
+  }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .shot--1 { width: 300px; height: 300px; right: 210px; top: 60px; transform: rotate(-7deg); z-index: 3; }
+  .shot--2 { width: 320px; height: 320px; right: 20px; top: 150px; transform: rotate(5deg); z-index: 2; }
+  .shot--3 { width: 280px; height: 280px; right: 260px; top: 300px; transform: rotate(4deg); z-index: 1; }
+  .heart {
+    position: absolute; right: 330px; top: 330px; z-index: 4;
+    width: 84px; height: 84px; background: #b3124f; border-radius: 50%;
+    display: grid; place-items: center; box-shadow: 0 12px 30px rgba(179,18,79,.4);
+    transform: rotate(-8deg);
+  }
+  .heart svg { width: 40px; height: 40px; }
+</style>
+</head>
+<body>
+  <span class="deco deco--1"></span><span class="deco deco--2"></span>
+  <div class="left">
+    <span class="kicker"><span class="dot"></span> A cosy corner of British home baking</span>
+    <h1>Bonny Bakes</h1>
+    <p class="tag">Simple bakes. <em>Happy hearts.</em></p>
+    <div class="chips">
+      <span class="chip">12 tried-and-tested recipes</span>
+      <span class="chip">Every recipe scales up &amp; down</span>
+      <span class="chip">Print-friendly cards</span>
+    </div>
+  </div>
+  <div class="right">
+    <div class="shot shot--1"><img src="../images/fairy-cakes.jpg" alt=""></div>
+    <div class="shot shot--2"><img src="../images/victoria-sponge.jpg" alt=""></div>
+    <div class="shot shot--3"><img src="../images/flapjacks.jpg" alt=""></div>
+    <div class="heart"><svg viewBox="0 0 24 24"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1l8.8 8.8 8.8-8.8a5 5 0 0 0 0-7.1z" fill="#fff"/></svg></div>
+  </div>
+</body>
+</html>
