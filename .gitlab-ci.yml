@@ -1,0 +1,32 @@
+# ==============================================================================
+# Bonny Bakes - GitLab CI/CD & Security Matrix
+# ==============================================================================
+
+stages:
+  - test
+  - security-audit
+  - deploy
+
+include:
+  - template: Jobs/SAST.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
+
+sast:
+  stage: security-audit
+  variables:
+    SEARCH_MAX_DEPTH: 10
+
+secret_detection:
+  stage: security-audit
+
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - mkdir -p public
+    - cp -r * public/ 2>/dev/null || true
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
