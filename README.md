@@ -2,6 +2,8 @@
 
 # 🍰 Bonny Bakes
 
+> **👉 Live site: [dlinacre.github.io/bonny-bakes](https://dlinacre.github.io/bonny-bakes/)**
+
 **Simple bakes. Happy hearts.** — a warm, friendly home-baking website full of
 lovely recipes from Bonny's kitchen, written for real kitchens, real tins and
 real hungry families.
@@ -45,7 +47,7 @@ your browser.
 2. Under *Build and deployment*, choose **Deploy from a branch** → branch
    `main` → folder `/ (root)` → **Save**.
 3. After a minute or two your site is live at
-   `https://YOUR-USERNAME.github.io/bonny-bakes/` — a link you can send to
+   `https://dlinacre.github.io/bonny-bakes/` — a link you can send to
    anyone.
 
 ---
